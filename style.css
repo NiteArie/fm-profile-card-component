@@ -16,6 +16,7 @@ body {
     align-items: center;
     height: 100vh;
     background-color: hsl(185, 75%, 39%);
+    overflow: hidden;
 }
 
 .container::before {
@@ -23,36 +24,27 @@ body {
     position: absolute;
     top: 0;
     left: 0;
-    right: 0;
-    bottom: 0;
+    width: 50%;
+    height: 1000px;
     background-image: url("images/bg-pattern-top.svg");
     background-repeat: no-repeat;
-    background-position: -200px -500px;
+    background-position: 100% 100%;
+    transform: translateY(-50%);
 }
 
 .container::after {
     content: "";
     position: absolute;
-    top: 0;
-    left: 0;
     right: 0;
     bottom: 0;
+    width: 50%;
+    height: 1000px;
+
     background-image: url("images/bg-pattern-bottom.svg");
     background-repeat: no-repeat;
-    background-position: bottom -600px right -200px;
+    transform: translateY(50%);
 }
 
-@media only screen and (max-width: 500px) {
-    .container::before {
-        background-size: 80%;
-        background-position: -100px -150px;
-    }
-
-    .container::after {
-        background-size: 120%;
-        background-position: bottom -200px right -300px;
-    }
-}
 
 .container__card {
     width: 350px;
@@ -102,9 +94,9 @@ body {
 
 .container__card__content__detail__section {
     margin-top: 20px;
-    padding: 30px;
+    padding: 20px;
     flex: 1;
-    border-top: 1px solid hsl(0, 0%, 59%);
+    border-top: 1px solid hsl(0, 0%, 90%);
 }
 
 .container__card__content__detail__section p {
